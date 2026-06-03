@@ -1,24 +1,30 @@
-import java.util.*;
-public class GradeCalculator {
+import java.util.Scanner;
+
+public class GradeCalculator{
+
     public static void main(String[] args) {
-        Scanner sc  = new Scanner(System.in);
-        System.out.print("Enter the marks out of 100 : ");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter marks (out of 100): ");
         int marks = sc.nextInt();
-        if(marks>=90 && marks<=100) {
-            System.out.println("Grade : A");
+
+        char grade;
+
+        if (marks >= 90 && marks <= 100) {
+            grade = 'A';
+        } else if (marks >= 80) {
+            grade = 'B';
+        } else if (marks >= 70) {
+            grade = 'C';
+        } else if (marks >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
         }
-        else if(marks>=80 && marks<=89) {
-            System.out.println("Grade: B");
-        }
-        else if(marks>=70 && marks<=79) {
-            System.out.println("Grade: C");
-        }
-        else if(marks>=60 && marks<=69) {
-            System.out.println("Grade: D");
-        }
-        else {
-            System.out.println("Grade: F");
-        }
+
+        System.out.println("Your Grade: " + grade);
+
         sc.close();
     }
 }

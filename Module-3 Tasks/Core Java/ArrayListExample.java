@@ -3,21 +3,20 @@ import java.util.Scanner;
 
 public class ArrayListExample {
     public static void main(String[] args) {
+        ArrayList<String> names = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        ArrayList<String> students = new ArrayList<>();
 
-        System.out.print("Enter number of students: ");
-        int n = sc.nextInt();
+        System.out.print("How many names to enter? ");
+        int count = sc.nextInt();
         sc.nextLine();
 
-        for (int i = 0; i < n; i++) {
-            System.out.print("Enter student name: ");
-            String name = sc.nextLine();
-            students.add(name);
+        for (int i = 0; i < count; i++) {
+            System.out.print("Enter name " + (i + 1) + ": ");
+            names.add(sc.nextLine());
         }
 
-        System.out.println("\nStudent Names:");
-        for (String name : students) {
+        System.out.println("\nAll student names:");
+        for (String name : names) {
             System.out.println(name);
         }
         sc.close();

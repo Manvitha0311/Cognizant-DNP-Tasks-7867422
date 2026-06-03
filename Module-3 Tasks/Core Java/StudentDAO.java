@@ -1,54 +1,55 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+//32
 
-class StudentDAO {
+import java.sql.*;
 
-    private final String url = "jdbc:mysql://localhost:3306/college";
-    private final String user = "root";
-    private final String password = "your_password";
+public class StudentDAO {
 
-    // Method to get connection
-    private Connection getConnection() throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        return DriverManager.getConnection(url, user, password);
+    static final String URL = "jdbc:mysql://localhost:3306/school";
+    static final String USER = "root";
+    static final String PASSWORD = "Pa@metti17";
+
+    Connection connect() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
-    // INSERT operation
-    public void insertStudent(int id, String name, int age) {
-        String query = "INSERT INTO students (id, name, age) VALUES (?, ?, ?)";
-
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(query)) {
+    void insertStudent(int id, String name, int age) {
+        String sql = "INSERT INTO students (id, name, age) VALUES (?, ?, ?)";
+        try (Connection con = connect();
+             PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, id);
             ps.setString(2, name);
             ps.setInt(3, age);
+            ps.executeUpdate();
+            System.out.println("Student inserted: " + name);
 
-            int rows = ps.executeUpdate();
-            System.out.println(rows + " record inserted successfully.");
-
-        } catch (Exception e) {
-            System.out.println("Insert Error: " + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("Insert failed: " + e.getMessage());
         }
     }
 
-    // UPDATE operation
-    public void updateStudent(int id, String name, int age) {
-        String query = "UPDATE students SET name = ?, age = ? WHERE id = ?";
+    void updateStudent(int id, String newName, int newAge) {
+        String sql = "UPDATE students SET name = ?, age = ? WHERE id = ?";
+        try (Connection con = connect();
+             PreparedStatement ps = con.prepareStatement(sql)) {
 
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(query)) {
-
-            ps.setString(1, name);
-            ps.setInt(2, age);
+            ps.setString(1, newName);
+            ps.setInt(2, newAge);
             ps.setInt(3, id);
+            ps.executeUpdate();
+            System.out.println("Student updated with ID: " + id);
 
-            int rows = ps.executeUpdate();
-            System.out.println(rows + " record updated successfully.");
-
-        } catch (Exception e) {
-            System.out.println("Update Error: " + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("Update failed: " + e.getMessage());
         }
+    }
+
+    public static void main(String[] args) {
+        StudentDAO dao = new StudentDAO();
+
+        dao.insertStudent(1, "Alice", 20);
+        dao.insertStudent(2, "Bob", 22);
+
+        dao.updateStudent(1, "Alice Smith", 21);
     }
 }
