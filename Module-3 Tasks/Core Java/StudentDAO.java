@@ -6,7 +6,7 @@ public class StudentDAO {
 
     static final String URL = "jdbc:mysql://localhost:3306/school";
     static final String USER = "root";
-    static final String PASSWORD = "Pa@metti17";
+    static final String PASSWORD = "Padma";
 
     Connection connect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
