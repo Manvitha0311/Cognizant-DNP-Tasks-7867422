@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>jQuery Demo</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef5ff;
+text-align:center;
+}
+
+.card{
+
+width:500px;
+
+margin:50px auto;
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+}
+
+button{
+
+padding:10px 20px;
+
+margin:5px;
+
+border:none;
+
+color:white;
+}
+
+.show{
+background:green;
+}
+
+.hide{
+background:red;
+}
+
+.event{
+
+display:none;
+
+padding:20px;
+
+background:#d8ebff;
+
+margin-top:15px;
+
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>🎉 Event Card</h2>
+
+<button
+id="registerBtn"
+class="show">
+
+Show Event
+
+</button>
+
+<button
+id="hideBtn"
+class="hide">
+
+Hide Event
+
+</button>
+
+<div class="event">
+
+Music Festival Registration Open
+
+</div>
+
+<p>
+
+Benefit of React/Vue:
+
+Reusable Components
+and Better State Management.
+
+</p>
+
+</div>
+
+<script>
+
+$("#registerBtn").click(function(){
+
+$(".event").fadeIn();
+
+});
+
+$("#hideBtn").click(function(){
+
+$(".event").fadeOut();
+
+});
+
+</script>
+
+</body>
+</html>

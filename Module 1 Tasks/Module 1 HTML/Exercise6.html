@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Feedback Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 450px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .big {
+            width: 250px;
+            height: 250px;
+        }
+
+        #message {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #charCount {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Event Feedback Form</h2>
+
+    <!-- Phone Number -->
+    <label>Phone Number:</label>
+    <input type="text" id="phone" placeholder="Enter phone number"
+           onblur="validatePhone()">
+
+    <!-- Event Selection -->
+    <label>Select Event:</label>
+    <select id="eventType" onchange="showFee()">
+        <option value="">Choose Event</option>
+        <option value="100">Workshop</option>
+        <option value="200">Seminar</option>
+        <option value="300">Cultural Event</option>
+    </select>
+
+    <p id="fee"></p>
+
+    <!-- Image -->
+    <img src="https://via.placeholder.com/150"
+         id="eventImage"
+         ondblclick="enlargeImage()">
+
+    <!-- Feedback -->
+    <label>Feedback:</label>
+    <textarea id="feedback"
+              placeholder="Enter your feedback"
+              onkeyup="countCharacters()"></textarea>
+
+    <p>Character Count: <span id="charCount">0</span></p>
+
+    <!-- Submit -->
+    <button onclick="submitForm()">Submit</button>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+
+    // onblur validation
+    function validatePhone() {
+        let phone = document.getElementById("phone").value;
+
+        if (phone.length != 10 || isNaN(phone)) {
+            alert("Enter a valid 10-digit phone number");
+        }
+    }
+
+    // onchange event
+    function showFee() {
+        let fee = document.getElementById("eventType").value;
+        document.getElementById("fee").innerHTML =
+            "Event Fee: ₹" + fee;
+    }
+
+    // onclick event
+    function submitForm() {
+        document.getElementById("message").innerHTML =
+            "Feedback Submitted Successfully!";
+    }
+
+    // ondblclick event
+    function enlargeImage() {
+        document.getElementById("eventImage").classList.toggle("big");
+    }
+
+    // keyboard event
+    function countCharacters() {
+        let text = document.getElementById("feedback").value;
+        document.getElementById("charCount").innerHTML = text.length;
+    }
+
+</script>
+
+</body>
+</html>

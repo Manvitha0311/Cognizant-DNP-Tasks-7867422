@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Community Event Portal</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#register">Register</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#contact">Contact</a>
+
+    <a href="help.html" target="_blank">Help</a>
+</nav>
+
+<!-- Main -->
+
+<main>
+
+<section id="home">
+
+<div id="welcomeBanner">
+    <h1>Welcome to Community Event Portal</h1>
+
+    <p>
+        Special Offer:
+        <span style="color:red;font-weight:bold;">
+            Free Entry for First 50 Registrations!
+        </span>
+    </p>
+
+</div>
+
+</section>
+
+<section id="events">
+
+<h2 class="highlight">Upcoming Events</h2>
+
+<select id="eventSelect" onchange="showFee()">
+    <option value="">Select Event</option>
+    <option value="100">Music Fest</option>
+    <option value="200">Food Carnival</option>
+    <option value="300">Tech Expo</option>
+</select>
+
+<p id="feeDisplay"></p>
+
+</section>
+
+<section id="gallery">
+
+<h2>Event Gallery</h2>
+
+<table>
+
+<tr>
+
+<td>
+<img src="images/event1.jpg"
+class="galleryImg"
+title="Music Fest"
+alt="Music Fest">
+
+<p>Music Fest</p>
+
+</td>
+
+<td>
+<img src="images/event2.jpg"
+class="galleryImg"
+title="Food Carnival"
+alt="Food Carnival">
+
+<p>Food Carnival</p>
+</td>
+
+<td>
+<img src="images/event3.jpg"
+class="galleryImg"
+title="Sports Day"
+alt="Sports Day">
+
+<p>Sports Day</p>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<img src="images/event4.jpg"
+class="galleryImg"
+title="Book Fair"
+alt="Book Fair">
+
+<p>Book Fair</p>
+</td>
+
+<td>
+<img src="images/event5.jpg"
+class="galleryImg"
+title="Tech Expo"
+alt="Tech Expo">
+
+<p>Tech Expo</p>
+</td>
+
+<td>
+<img src="images/event6.jpg"
+class="galleryImg"
+title="Cultural Night"
+alt="Cultural Night">
+
+<p>Cultural Night</p>
+</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section id="register">
+
+<h2>Event Registration</h2>
+
+<form id="registrationForm">
+
+<input
+type="text"
+placeholder="Enter Name"
+required
+autofocus>
+
+<input
+type="email"
+placeholder="Enter Email"
+required>
+
+<input
+type="date"
+required>
+
+<select required>
+
+<option>Select Event</option>
+<option>Music Fest</option>
+<option>Food Carnival</option>
+<option>Tech Expo</option>
+
+</select>
+
+<textarea
+placeholder="Message"></textarea>
+
+<button
+type="button"
+onclick="registerUser()">
+
+Submit
+
+</button>
+
+<output id="result"></output>
+
+</form>
+
+</section>
+
+<section id="feedback">
+
+<h2>Feedback</h2>
+
+<input
+type="text"
+id="phone"
+placeholder="Phone Number"
+onblur="validatePhone()">
+
+<textarea
+id="feedbackText"
+placeholder="Type feedback..."
+onkeyup="countChars()">
+
+</textarea>
+
+<p id="charCount">Characters: 0</p>
+
+</section>
+
+<section>
+
+<h2>Video Invite</h2>
+
+<video
+width="500"
+controls
+oncanplay="videoReady()">
+
+<source src="video/promo.mp4" type="video/mp4">
+
+</video>
+
+<p id="videoMessage"></p>
+
+</section>
+
+<section>
+
+<h2>User Preferences</h2>
+
+<button onclick="savePreference()">
+Save Preference
+</button>
+
+<button onclick="clearPreferences()">
+Clear Preferences
+</button>
+
+</section>
+
+<section>
+
+<h2>Nearby Events</h2>
+
+<button onclick="findLocation()">
+Find Nearby Events
+</button>
+
+<p id="location"></p>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<p>Email: support@communityevents.com</p>
+
+</section>
+
+</main>
+
+<!-- Footer -->
+
+<footer>
+
+<p>© 2026 Local Community Event Portal</p>
+
+</footer>
+
+</body>
+
+</html>

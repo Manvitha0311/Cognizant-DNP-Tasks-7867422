@@ -1,0 +1,25 @@
+.eventCard{
+
+    border:3px solid blue;
+
+    padding:20px;
+
+    margin:30px;
+
+    background-color:lightyellow;
+}
+
+input:focus{
+
+    outline:3px solid red;
+}
+
+.hiddenText{
+
+    visibility:hidden;
+}
+
+.noneText{
+
+    display:none;
+}

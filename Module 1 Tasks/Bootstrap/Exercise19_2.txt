@@ -1,0 +1,21 @@
+Bootstrap Customization Using Sass
+
+_variables.scss
+
+$primary: #6610f2;
+
+$border-radius: 1rem;
+
+Import Bootstrap
+
+@import "bootstrap/scss/bootstrap";
+
+Compile Again
+
+sass custom.scss custom.css
+
+Result:
+
+Primary Color Changed
+
+Rounded Components Increased

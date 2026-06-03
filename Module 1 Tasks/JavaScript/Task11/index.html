@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Registration Form</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:linear-gradient(135deg,#eef5ff,#d8ebff);
+}
+
+.form-box{
+    width:450px;
+    margin:50px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px lightgray;
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+}
+
+.error{
+    color:red;
+    font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h2>📝 Event Registration</h2>
+
+<form id="registerForm">
+
+<input
+type="text"
+name="username"
+placeholder="Enter Name">
+
+<div id="nameError" class="error"></div>
+
+<input
+type="email"
+name="email"
+placeholder="Enter Email">
+
+<div id="emailError" class="error"></div>
+
+<select name="event">
+
+<option value="">
+Select Event
+</option>
+
+<option>Music Festival</option>
+<option>Food Fair</option>
+
+</select>
+
+<button type="submit">
+Register
+</button>
+
+</form>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

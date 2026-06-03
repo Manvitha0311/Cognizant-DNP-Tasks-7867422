@@ -1,0 +1,15 @@
+Bootstrap Directory Structure
+
+CSS Folder:
+Contains bootstrap.min.css.
+Used for styling webpages.
+
+JS Folder:
+Contains bootstrap.bundle.min.js.
+Used for modals, accordions,
+dropdowns and interactive components.
+
+Icons Folder:
+Contains Bootstrap Icons.
+Used for social media icons,
+buttons and navigation icons.

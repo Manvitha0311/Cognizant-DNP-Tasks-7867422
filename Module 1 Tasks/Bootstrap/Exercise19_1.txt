@@ -1,0 +1,30 @@
+Bootstrap 5 Sass Setup
+
+Step 1:
+Install Node.js
+
+Step 2:
+Open Terminal
+
+Step 3:
+Run
+
+npm install bootstrap
+
+Step 4:
+Install Sass
+
+npm install sass
+
+Step 5:
+Create custom.scss
+
+Step 6:
+Import Bootstrap SCSS
+
+@import "bootstrap/scss/bootstrap";
+
+Step 7:
+Compile SCSS
+
+sass custom.scss custom.css

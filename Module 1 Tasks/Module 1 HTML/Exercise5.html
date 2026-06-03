@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        output {
+            display: block;
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Event Registration Form</h2>
+
+    <form onsubmit="showMessage(event)">
+        
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" required autofocus>
+
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Date:</label>
+        <input type="date" required>
+
+        <label>Event Type:</label>
+        <select required>
+            <option value="">Select Event</option>
+            <option>Workshop</option>
+            <option>Seminar</option>
+            <option>Cultural Event</option>
+            <option>Sports Event</option>
+        </select>
+
+        <label>Message:</label>
+        <textarea placeholder="Enter your message" required></textarea>
+
+        <button type="submit">Register</button>
+
+        <output id="result"></output>
+    </form>
+</div>
+
+<script>
+    function showMessage(event) {
+        event.preventDefault();
+        document.getElementById("result").textContent =
+            "Registration Successful!";
+    }
+</script>
+
+</body>
+</html>

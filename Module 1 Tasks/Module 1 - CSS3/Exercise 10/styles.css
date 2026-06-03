@@ -1,0 +1,43 @@
+body{
+
+    width:90%;
+
+    margin:auto;
+}
+
+nav{
+
+    display:flex;
+
+    gap:20px;
+}
+
+img{
+
+    width:40vw;
+
+    height:auto;
+}
+
+h1{
+
+    font-size:3vw;
+}
+
+@media screen and (max-width:768px){
+
+    nav{
+
+        flex-direction:column;
+    }
+
+    img{
+
+        width:80vw;
+    }
+
+    h1{
+
+        font-size:5vw;
+    }
+}

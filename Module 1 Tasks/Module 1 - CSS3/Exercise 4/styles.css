@@ -1,0 +1,22 @@
+body{
+
+    background-image:url("background.jpg");
+
+    background-color:#f4f4f4;
+
+}
+
+.title{
+
+    color:#FF5733;
+
+    background:rgba(0,0,255,0.3);
+
+    padding:20px;
+
+    background:
+    linear-gradient(to right,
+    orange,
+    yellow);
+
+}
